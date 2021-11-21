@@ -11,7 +11,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    async function getManager() {
+    async function getContractDetails() {
       const manager = await lottery.methods.manager().call();
       setManager(manager);
 
@@ -22,7 +22,7 @@ function App() {
       setBalance(balance);
     }
 
-    getManager();
+    getContractDetails();
   });
 
   const onEnter = async (event) => {
